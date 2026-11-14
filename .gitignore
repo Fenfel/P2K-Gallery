@@ -1,0 +1,14 @@
+# Android / Gradle build artifacts
+android/build/
+android/app/build/
+android/.gradle/
+.gradle/
+local.properties
+
+# Debug APKs live in GitHub Releases, not in git
+*.apk
+
+# Windows junk
+nul
+Thumbs.db
+desktop.ini

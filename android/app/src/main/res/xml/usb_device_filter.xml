@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Motorola C650 in modem mode (22b8:4902) and P2K mode (22b8:4901) -->
+    <usb-device vendor-id="8888" product-id="18690" />
+    <usb-device vendor-id="8888" product-id="18689" />
+</resources>

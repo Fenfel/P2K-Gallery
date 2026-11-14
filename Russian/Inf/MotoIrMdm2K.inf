@@ -1,0 +1,166 @@
+; MotoIrMdm2K.inf
+;
+; Installation driver description file (INF) for Motorola Infra-Red enabled
+; products. This file is intended to provide product specific installation 
+; support for Motorola Wireless Telephony devices as Infrared (IR) Modems, 
+; using IrComm protocol, on Microsoft Windows2000 and WindowsXP platforms.
+;
+; This file will provide support for all Motorola infrared enabled devices
+; which respond with the IRENUM value of: 
+;	- IRENUM\MOT0003 
+;	- IRENUM\Motorola_A830
+;	- IRENUM\Motorola_A835
+;
+; Revision History:
+; LIBbb70950 - update IRENUM ID to new format
+; LIBbb32089 - add support for A830 family of products 
+; LIBbb18622 - update settings values for 280 family products
+; LIBbb16339 - initial create
+;
+; Motorola product models which report using this IRENUM value are members
+; of the 280 Family and the 830 Family:
+;	- Timeport 280 (T280) 
+;	- Timeport 280i (T280i)
+;	- Timeport 280m (T280m)
+;	- P280
+;	- A830
+;	- A835
+;
+; This file is compatible with the following Windows desktop platforms:
+;	- WindowsXp Home 
+;	- WindowsXp Professional 
+;	- Windows2000 with SP3
+;
+; Copyright (c) 2001 - 2002 by Motorola Inc. 
+
+[Version]
+LayoutFile=MDMIRMDM.INF
+Signature="$WINDOWS NT$"
+Class=Modem
+ClassGUID={4D36E96D-E325-11CE-BFC1-08002BE10318}
+Provider=%Motorola%
+DriverVer=12/8/2002,1.0.0.11
+
+[Manufacturer]
+%Motorola% = Motorola
+
+[Strings]
+Motorola = "Motorola"
+Moto3	 = "Motorola 280 Family IR Modem"
+Moto4	 = "Motorola 830 Family IR Modem"
+
+[Motorola]
+%Moto3%=Moto3, IRENUM\MOT0003 ; 280 Family device IR enum value
+%Moto4%=Moto4, IRENUM\Motorola_A830 ; 830 Family device IR enum value,
+                                    ; new ID format
+%Moto4%=Moto4, IRENUM\Motorola_A835 ; 835 device IR enum value, new
+                                    ; ID format
+
+[Moto3.NT]
+Include=MDMIRMDM.INF
+Needs=MDMIRMDM.MSIRCOMM.CopyFiles
+AddReg=All, Moto3.MDMSettings, Moto3.MDMResponse, GsmMdmResponse, EXTERNAL
+
+[Moto3.NT.Services]
+Include=MDMIRMDM.INF
+Needs=MDMIRMDM.MSIRCOMM.AddService
+
+[Moto3.NT.HW]
+Include=MDMIRMDM.INF
+Needs=MDMIRMDM.MSIRCOMM.LowerFilterAddReg
+
+[Moto4.NT]
+Include=MDMIRMDM.INF
+Needs=MDMIRMDM.MSIRCOMM.CopyFiles
+AddReg=All, Moto3.MDMSettings, Moto3.MDMResponse, GsmMdmResponse, EXTERNAL
+
+[Moto4.NT.Services]
+Include=MDMIRMDM.INF
+Needs=MDMIRMDM.MSIRCOMM.AddService
+
+[Moto4.NT.HW]
+Include=MDMIRMDM.INF
+Needs=MDMIRMDM.MSIRCOMM.LowerFilterAddReg
+
+
+
+[All]
+HKR, , ConfigDialog, , modemui.dll
+HKR, , PortSubClass, 1, 02
+HKR, , EnumPropPages, , "modemui.dll,EnumPropPages"
+HKR, , ConfigDelay, 0x10001, 200
+
+[EXTERNAL]
+HKR, , DeviceType, 1, 01
+
+[Moto3.MDMSettings]
+HKR, , Properties, 1, 00,01,00,00, FF,00,00,00, FF,00,00,00, 00,00,00,00, 00,00,00,00, 38,03,00,00, 00,C2,01,00, C0,DA,00,00
+HKR, Init, 1, , "ATZ<cr>"	; reset default values and terminate any calls
+HKR, Init, 2, , "ATE1V1<cr>"
+HKR, Answer, 1, , "ATA<cr>"
+HKR, Hangup, 1, , "ATHE1<cr>"
+HKR, , Reset, , "ATZ<cr>"
+HKR, Settings, Prefix, , "AT"
+HKR, Settings, Terminator, , "<cr>"
+HKR, Settings, DialPrefix, , "D"
+HKR, Settings, DialSuffix, , ""
+HKR, Settings, Pulse, , "P"
+HKR, Settings, Tone, , "T"
+HKR, Monitor, 1, , "ATS0=0<cr>"
+HKR, Monitor, 2, , "None"
+HKR, Settings, FlowControl_Off, ,  "+IFC=0,0"
+HKR, Settings, FlowControl_Hard, , "+IFC=2,2"
+HKR, Settings, FlowControl_Soft, , "+IFC=1,1"
+
+[Moto3.MDMResponse]
+HKR, Responses, "<cr><lf>OK<cr><lf>",          1, 00, 00, 00,00,00,00, 00,00,00,00
+HKR, Responses, "<cr><lf>RING<cr><lf>",        1, 08, 00, 00,00,00,00, 00,00,00,00
+HKR, Responses, "<cr><lf>ERROR<cr><lf>",       1, 03, 00, 00,00,00,00, 00,00,00,00
+HKR, Responses, "<cr><lf>NO DIALTONE<cr><lf>", 1, 05, 00, 00,00,00,00, 00,00,00,00
+HKR, Responses, "<cr><lf>NO DIAL TONE<cr><lf>",1, 05, 00, 00,00,00,00, 00,00,00,00
+HKR, Responses, "<cr><lf>BUSY<cr><lf>",        1, 06, 00, 00,00,00,00, 00,00,00,00
+HKR, Responses, "<cr><lf>NO CARRIER<cr><lf>",  1, 04, 00, 00,00,00,00, 00,00,00,00
+HKR, Responses, "<cr><lf>NO ANSWER<cr><lf>",   1, 07, 00, 00,00,00,00, 00,00,00,00
+HKR, Responses, "<cr><lf>CONNECT<cr><lf>",     1, 02, 00, 00,00,00,00, 00,00,00,00
+HKR, Responses, "<cr><lf>CONNECT 300<cr><lf>",       1, 02, 00, 2C,01,00,00, 00,00,00,00
+HKR, Responses, "<cr><lf>CONNECT 600<cr><lf>",       1, 02, 00, 58,02,00,00, 00,00,00,00
+HKR, Responses, "<cr><lf>CONNECT 1200<cr><lf>",      1, 02, 00, B0,04,00,00, 00,00,00,00
+HKR, Responses, "<cr><lf>CONNECT 2400<cr><lf>",      1, 02, 00, 60,09,00,00, 00,00,00,00
+HKR, Responses, "<cr><lf>CONNECT 4800<cr><lf>",      1, 02, 00, C0,12,00,00, 00,00,00,00
+HKR, Responses, "<cr><lf>CONNECT 7200<cr><lf>",      1, 02, 00, 20,1C,00,00, 00,00,00,00
+HKR, Responses, "<cr><lf>CONNECT 9600<cr><lf>",      1, 02, 00, 80,25,00,00, 00,00,00,00
+HKR, Responses, "<cr><lf>CONNECT 12000<cr><lf>",     1, 02, 00, E0,2E,00,00, 00,00,00,00
+HKR, Responses, "<cr><lf>CONNECT 14400<cr><lf>",     1, 02, 00, 40,38,00,00, 00,00,00,00
+HKR, Responses, "<cr><lf>CONNECT 16800<cr><lf>",     1, 02, 00, A0,41,00,00, 00,00,00,00
+HKR, Responses, "<cr><lf>CONNECT 19200<cr><lf>",     1, 02, 00, 00,4B,00,00, 00,00,00,00
+HKR, Responses, "<cr><lf>CONNECT 21600<cr><lf>",     1, 02, 00, 60,54,00,00, 00,00,00,00
+HKR, Responses, "<cr><lf>CONNECT 24000<cr><lf>",     1, 02, 00, C0,5D,00,00, 00,00,00,00
+HKR, Responses, "<cr><lf>CONNECT 26400<cr><lf>",     1, 02, 00, 20,67,00,00, 00,00,00,00
+HKR, Responses, "<cr><lf>CONNECT 28800<cr><lf>",     1, 02, 00, 80,70,00,00, 00,00,00,00
+HKR, Responses, "<cr><lf>CONNECT 31200<cr><lf>",     1, 02, 00, E0,79,00,00, 00,00,00,00
+HKR, Responses, "<cr><lf>CONNECT 33600<cr><lf>",     1, 02, 00, 40,83,00,00, 00,00,00,00
+HKR, Responses, "<cr><lf>CONNECT 38400<cr><lf>",     1, 02, 00, 00,96,00,00, 00,00,00,00
+HKR, Responses, "<cr><lf>CONNECT 57600<cr><lf>",     1, 02, 00, 00,E1,00,00, 00,00,00,00
+HKR, Responses, "<cr><lf>CONNECT 115200<cr><lf>",    1, 02, 00, 00,C2,01,00, 00,00,00,00
+HKR, Responses, "<cr><lf>CONNECT 115,200<cr><lf>",   1, 02, 00, 00,C2,01,00, 00,00,00,00
+
+[GsmMdmResponse]
+HKR, Responses, "0<cr>",  1, 00, 00, 00,00,00,00, 00,00,00,00 ; OK - Command executed
+HKR, Responses, "1<cr>",  1, 02, 00, 00,00,00,00, 00,00,00,00 ; CONNECT - Connection
+HKR, Responses, "2<cr>",  1, 08, 00, 00,00,00,00, 00,00,00,00 ; RING - Ring signal indicated
+HKR, Responses, "3<cr>",  1, 04, 00, 00,00,00,00, 00,00,00,00 ; NO CARRIER
+HKR, Responses, "4<cr>",  1, 03, 00, 00,00,00,00, 00,00,00,00 ; ERROR - Invalid command
+HKR, Responses, "5<cr>",  1, 02, 00, B0,04,00,00, 00,00,00,00 ; NO DIALTONE - No dial tone detected
+HKR, Responses, "6<cr>",  1, 05, 00, 00,00,00,00, 00,00,00,00 ; BUSY - Engaged (busy) signal
+HKR, Responses, "7<cr>",  1, 06, 00, 00,00,00,00, 00,00,00,00 ; NO ANSWER
+
+[V25terMdmResponse]
+HKR, Responses, "0<cr>",  1, 00, 00, 00,00,00,00, 00,00,00,00 ; OK - Command executed
+HKR, Responses, "1<cr>",  1, 02, 00, 00,00,00,00, 00,00,00,00 ; CONNECT - Connection
+HKR, Responses, "2<cr>",  1, 08, 00, 00,00,00,00, 00,00,00,00 ; RING - Ring signal indicated
+HKR, Responses, "3<cr>",  1, 04, 00, 00,00,00,00, 00,00,00,00 ; NO CARRIER
+HKR, Responses, "4<cr>",  1, 03, 00, 00,00,00,00, 00,00,00,00 ; ERROR - Invalid command
+HKR, Responses, "6<cr>",  1, 05, 00, 00,00,00,00, 00,00,00,00 ; NO DIALTONE - No dial tone detected
+HKR, Responses, "7<cr>",  1, 06, 00, 00,00,00,00, 00,00,00,00 ; BUSY - Engaged (busy) signal
+HKR, Responses, "8<cr>",  1, 07, 00, 00,00,00,00, 00,00,00,00 ; NO ANSWER
+

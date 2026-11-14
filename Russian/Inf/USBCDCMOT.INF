@@ -1,0 +1,227 @@
+; Windows 98SE/ME USB Modem Setup File
+; Copyright (c) 2004 Motorola
+; Manufacturer: Motorola
+; Revision History:
+;
+; LIBdd18138 - Support for Talon Int.
+; LIBdd25316 - Support for QualComm 6050 chipset
+; LIBdd73554   2-3-2004  Support for QualComm 6100 and 6300 chipsets
+
+[Version]
+CatalogFile=usbcdc.cat
+Signature="$CHICAGO$"
+Class=USB
+Provider=%Motorola%
+LayoutFile=layout.inf,layout1.inf,layout2.inf
+DriverVer=2/3/2004, 2.0.0.3
+
+[Manufacturer]
+%Motorola%=Motorola
+
+[Motorola]
+%USBCDMA%		=USBCDMA,USB\VID_22B8&PID_0005
+%USBPATRIOT%		=USBPATRIOT,USB\VID_22B8&PID_1005
+%USBLCA%		=USBLCA,USB\VID_22B8&PID_3802
+%USB1XCDMA%		=USB1XCDMA,USB\VID_22B8&PID_2805
+%USB1XCDMA5100%		=USB1XCDMA5100,USB\VID_22B8&PID_2822
+%USBTALON%		=USBTALON,USB\VID_22B8&PID_3002
+%USBTALONINT%		=USBTALONINT,USB\VID_22B8&PID_6102
+%USBHELEN%		=USBHELEN,USB\VID_22B8&PID_4002
+%USBEZX%		=USBEZX,USB\VID_22B8&PID_6002
+%USBNEPTUNEULS%         =USBNEPTUNEULS,USB\VID_22B8&PID_5802
+%USBNEPTUNELTS%		=USBNEPTUNELTS,USB\VID_22B8&PID_4802
+%USBNEPTUNELTE%		=USBNEPTUNELTE,USB\VID_22B8&PID_4902
+%USBNEPTUNELTX%		=USBNEPTUNELTX,USB\VID_22B8&PID_4A02
+%USBQUALCOMM6050%	=USBQUALCOMM6050,USB\VID_22B8&PID_2A02
+%USBMSM6100%    	=USBMSM6100,USB\VID_22B8&PID_2A22
+%USBMSM6300%    	=USBMSM6300,USB\VID_22B8&PID_2A42
+
+[USBCDMA]
+AddReg=USBcommon
+CopyFiles=USB.sys
+
+[USBPATRIOT]
+AddReg=USBcommon
+CopyFiles=USB.sys
+
+[USBLCA]
+AddReg=USBcommon
+CopyFiles=USB.sys
+
+[USB1XCDMA]
+AddReg=USBcommon
+CopyFiles=USB.sys
+
+[USB1XCDMA5100]
+AddReg=USBcommon
+CopyFiles=USB.sys
+
+[USBTALON]
+AddReg=USBcommon
+CopyFiles=USB.sys
+
+[USBTALONINT]
+AddReg=USBcommon
+CopyFiles=USB.sys
+
+[USBHELEN]
+AddReg=USBcommon
+CopyFiles=USB.sys
+
+[USBEZX]
+AddReg=USBcommon
+CopyFiles=USB.sys
+
+[USBNEPTUNEULS]
+AddReg=USBcommon
+CopyFiles=USB.sys
+
+[USBNEPTUNELTS]
+AddReg=USBcommon
+CopyFiles=USB.sys
+
+[USBNEPTUNELTE]
+AddReg=USBcommon
+CopyFiles=USB.sys
+
+[USBNEPTUNELTX]
+AddReg=USBcommon
+CopyFiles=USB.sys
+
+[USBQUALCOMM6050]
+AddReg=USBcommon
+CopyFiles=USB.sys
+
+[USBMSM6100]
+AddReg=USBcommon
+CopyFiles=USB.sys
+
+[USBMSM6300]
+AddReg=USBcommon
+CopyFiles=USB.sys
+
+[USBcommon]
+HKR,,DevLoader,0,*ntkern
+HKR,,NTMPDriver,,"usbser.sys,ccport.sys"
+
+[USBCDMA.HW]
+AddReg=USBCDMAchild
+
+[USBPATRIOT.HW]
+AddReg=USBPATRIOTchild
+
+[USBLCA.HW]
+AddReg=USBLCAchild
+
+[USB1XCDMA.HW]
+AddReg=USB1XCDMAchild
+
+[USB1XCDMA5100.HW]
+AddReg=USB1XCDMA5100child
+
+[USBTALON.HW]
+AddReg=USBTALONchild
+
+[USBTALONINT.HW]
+AddReg=USBTALONINTchild
+
+[USBHELEN.HW]
+AddReg=USBHELENchild
+
+[USBEZX.HW]
+AddReg=USBEZXchild
+
+[USBNEPTUNEULS.HW]
+AddReg=USBNEPTUNEULSchild
+
+[USBNEPTUNELTS.HW]
+AddReg=USBNEPTUNELTSchild
+
+[USBNEPTUNELTE.HW]
+AddReg=USBNEPTUNELTEchild
+
+[USBNEPTUNELTX.HW]
+AddReg=USBNEPTUNELTXchild
+
+[USBQUALCOMM6050.HW]
+AddReg=USBQUALCOMM6050child
+
+[USBMSM6100.HW]
+AddReg=USBMSM6100child
+
+[USBMSM6300.HW]
+AddReg=USBMSM6300child
+
+[USBCDMAchild]
+HKR,,ChildID,2,"USB\MOTUSBCDMA"
+
+[USBPATRIOTchild]
+HKR,,ChildID,2,"USB\MOTUSBPATRIOT"
+
+[USBLCAchild]
+HKR,,ChildID,2,"USB\MOTUSBLCA"
+
+[USB1XCDMAchild]
+HKR,,ChildID,2,"USB\MOTUSB1XCDMA"
+
+[USB1XCDMA5100child]
+HKR,,ChildID,2,"USB\MOTUSB1XCDMA5100"
+
+[USBTALONchild]
+HKR,,ChildID,2,"USB\MOTUSBTALON"
+
+[USBTALONINTchild]
+HKR,,ChildID,2,"USB\MOTUSBTALONINT"
+
+[USBHELENchild]
+HKR,,ChildID,2,"USB\MOTUSBHELEN"
+
+[USBEZXchild]
+HKR,,ChildID,2,"USB\MOTUSBEZX"
+
+[USBNEPTUNEULSchild]
+HKR,,ChildID,2,"USB\MOTUSBNEPTUNEULS"
+
+[USBNEPTUNELTSchild]
+HKR,,ChildID,2,"USB\MOTUSBNEPTUNELTS"
+
+[USBNEPTUNELTEchild]
+HKR,,ChildID,2,"USB\MOTUSBNEPTUNELTE"
+
+[USBNEPTUNELTXchild]
+HKR,,ChildID,2,"USB\MOTUSBNEPTUNELTX"
+
+[USBQUALCOMM6050child]
+HKR,,ChildID,2,"USB\MOTUSBQUALCOMM6050"
+
+[USBMSM6100child]
+HKR,,ChildID,2,"USB\MOTUSBMSM6100"
+
+[USBMSM6300child]
+HKR,,ChildID,2,"USB\MOTUSBMSM6300"
+
+[Strings]
+Motorola="Motorola"
+USBCDMA="Motorola USB modem"
+USBPATRIOT="Motorola USB modem"
+USBLCA="Motorola USB modem"
+USB1XCDMA="Motorola USB modem" 
+USB1XCDMA5100="Motorola USB modem" 
+USBTALON="Motorola USB modem"
+USBTALONINT="Motorola USB modem"
+USBHELEN="Motorola USB modem"
+USBEZX="Motorola USB modem"
+USBNEPTUNEULS="Motorola USB modem"
+USBNEPTUNELTS="Motorola USB modem"
+USBNEPTUNELTE="Motorola USB modem"
+USBNEPTUNELTX="Motorola USB modem"
+USBQUALCOMM6050="Motorola USB modem"
+USBMSM6100="Motorola USB modem"
+USBMSM6300="Motorola USB modem"
+
+
+[USB.sys]
+usbser.sys
+
+[DestinationDirs]
+USB.sys=10,SYSTEM32\DRIVERS

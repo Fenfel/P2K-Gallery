@@ -1,0 +1,857 @@
+; Fichier de detection des drivers motorola  du 25/04/2004
+; RK
+; Motorola Phase 3 , manual build
+
+[General]
+Version=1.0
+
+[Commands]
+
+Cmd=ATZ
+Wait=500
+Cmd=AT+MODE=2
+Wait=500
+Wait=1000
+Manufacturer=AT+CGMI
+Model=AT+CGMM
+Mode=AT+MCMA?
+Cmd=AT+MODE=0
+Wait=500
+Cmd=ATZ
+Wait=500
+
+;########################## Motorola GSM##########################
+{Motorola GSM}
+
+[Motorola - Generic GSM driver]
+Driver=GSM_GEN
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model=+CGMM:  Generic
+Hardware=
+PnPNames=Motorola USB Modem xx
+
+[Motorola - A630]
+Driver=A630GUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=A630"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+BT                =  1
+DeviceFile    =  MotorolaA830_1.htm
+PairingFile   =  MotorolaA830_2.htm
+
+[Motorola - A830]
+Driver=830UWBCI
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=A830"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem,Motorola 830 Family IR Modem,Standard Modem over IR link
+BT                =  1
+DeviceFile    =  MotorolaA830_1.htm
+PairingFile   =  MotorolaA830_2.htm
+
+[Motorola - A860]
+Driver=860GWC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=A860"
+Mode=+MCMA: GSM
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - A840m]
+Driver=840mGUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=A840m"
+Mode=+MCMA: GSM
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - A835]
+Driver=A835
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=A835"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem,Motorola 830 Family IR Modem,Standard Modem over IR link
+BT                =  1
+DeviceFile    =  MotorolaA830_1.htm
+PairingFile   =  MotorolaA830_2.htm
+
+[Motorola - A845]
+Driver=845GWCBI
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=A845"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem,Motorola 830 Family IR Modem,Standard Modem over IR link
+BT                =  1
+DeviceFile    =  MotorolaA830_1.htm
+PairingFile   =  MotorolaA830_2.htm
+
+[Motorola - E1000]
+Driver=e1000
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=E1000"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem,Motorola 830 Family IR Modem,Standard Modem over IR link
+BT                =  1
+DeviceFile    =  MotorolaA830_1.htm
+PairingFile   =  MotorolaA830_2.htm
+
+[Motorola - V300]
+Driver=V300GUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=V300"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - V300M]
+Driver=V300mGUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=V300M"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - V303]
+Driver=V303GUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=V303"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+BT                =  0
+
+[Motorola - V400]
+Driver=V400GUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=V400"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+BT                =  0
+
+[Motorola - V400p]
+Driver=V400pGUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=V400p"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+BT                =  0
+
+[Motorola - V500]
+Driver=V500GUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=V500"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+BT                =  1
+DeviceFile    =  MotorolaA830_1.htm
+PairingFile   =  MotorolaA830_2.htm
+
+[Motorola - V500m]
+Driver=V500mGUC
+;Driver=V500GUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=V500m"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+BT                =  1
+DeviceFile    =  MotorolaA830_1.htm
+PairingFile   =  MotorolaA830_2.htm
+
+[Motorola - V501]
+Driver=V501GUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=V501"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+BT                =  1
+DeviceFile    =  MotorolaA830_1.htm
+PairingFile   =  MotorolaA830_2.htm
+
+[Motorola - V551]
+Driver=V551GUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=V511"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+BT                =  1
+DeviceFile    =  MotorolaA830_1.htm
+PairingFile   =  MotorolaA830_2.htm
+
+[Motorola - V525]
+Driver=V525GUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=V525"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+BT                =  1
+DeviceFile    =  MotorolaA830_1.htm
+PairingFile   =  MotorolaA830_2.htm
+
+[Motorola - V525M]
+Driver=V525mGUC
+;Driver=V500mGUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=V525M"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+BT                =  1
+DeviceFile    =  MotorolaA830_1.htm
+PairingFile   =  MotorolaA830_2.htm
+
+[Motorola - V555]
+Driver=V555GUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=V555"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+BT                =  1
+DeviceFile    =  MotorolaA830_1.htm
+PairingFile   =  MotorolaA830_2.htm
+
+[Motorola - V600]
+Driver=V600GUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=V600"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+BT                =  1
+DeviceFile    =  MotorolaA830_1.htm
+PairingFile   =  MotorolaA830_2.htm
+
+[Motorola - V600M]
+Driver=V600mGUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=V600M"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+BT                =  1
+DeviceFile    =  MotorolaA830_1.htm
+PairingFile   =  MotorolaA830_2.htm
+
+[Motorola - V3]
+Driver=V3GUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=V3"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+BT                =  1
+DeviceFile    =  MotorolaA830_1.htm
+PairingFile   =  MotorolaA830_2.htm
+
+[Motorola - V690]
+Driver=V690
+Manufacturer=+CGMI: Motorola CE, Copyright
+Model="MODEL=V690"
+Hardware=%windir%\Inf\V878_690.inf, Motorola,UNIMODEM2303
+PnPNames=Motorola V878-V690 Phone
+
+[Motorola - V878]
+Driver=V878
+Manufacturer=+CGMI: Motorola CE, Copyright
+Model="MODEL=V878"
+Hardware=%windir%\Inf\V878_690.inf, Motorola,UNIMODEM2303
+PnPNames=Motorola V878-V690 Phone
+
+[Motorola - V872]
+Driver=V878
+Manufacturer=+CGMI: Motorola CE, Copyright
+Model="MODEL=V872"
+Hardware=%windir%\Inf\V878_690.inf, Motorola,UNIMODEM2303
+PnPNames=Motorola V878-V690 Phone
+
+[Motorola - E380]
+Driver=E380GEU
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=e380"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - E398]
+Driver=e398
+;Driver=e398GWCB
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=e398"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+BT                =  1
+DeviceFile    =  MotorolaA830_1.htm
+PairingFile   =  MotorolaA830_2.htm
+
+[Motorola - M900]
+Driver=M900GEU
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=M900"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - T720]
+Driver=720GEC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=T720"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - T720i]
+Driver=720iGEC
+;Driver=720GEC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=T720i"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - T722]
+Driver=722GEC
+;Driver=720GEC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=T722"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - T725]
+Driver=T725
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=T725E"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - C330]
+Driver=330GEU
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=C330"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - C331g]
+Driver=331GUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=C331"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - C332g]
+Driver=332GUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=C332"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - C333g]
+Driver=333GUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=C333"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - C336g]
+Driver=336GUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=C336"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - C250]
+Driver=250GEU
+;Driver=350GEU
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=C250"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - C350]
+Driver=350GEU
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=C350"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - C350v]
+Driver=350vGEU
+;Driver=350GEU
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=C350v"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - C353g]
+Driver=353gGEU
+;Driver=350GEU
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=C353"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - C359g]
+Driver=359gGEU
+;Driver=350GEU
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=C359"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - C375]
+Driver=375GEU
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=C375"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - C380]
+Driver=c380GwU
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=C380"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - C450]
+Driver=450GEU
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=C450"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - C550]
+Driver=550GEU
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=C550"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - C650]
+Driver=c650GwU
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=C650"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - V60g]
+Driver=V60GWC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=V60"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - V60i]
+Driver=V60IGWC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=V60i"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - V60]
+Driver=V60IGWC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=V60"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - V66i]
+Driver=V66iGEC
+;Driver=V66GEC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=V66i"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - V66]
+Driver=V66GEC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=V.series 66"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - V80]
+Driver=V80GWU
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=V80"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+BT                =  1
+DeviceFile    =  MotorolaA830_1.htm
+PairingFile   =  MotorolaA830_2.htm
+
+[Motorola - V150]
+Driver=V150GEU
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model=MODEL=V150
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - v180]
+Driver=v180GwU
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=v180"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - v220]
+Driver=v220GwU
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=v220"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+
+;########################## Motorola CDMA
+{ Motorola CDMA}
+
+[Motorola - Generic CDMA driver]
+Driver=CDMA_GEN
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model=+CGMM:  Generic
+Hardware=
+PnPNames=Motorola USB Modem xx
+
+[Motorola - V260]
+Driver=260XUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=V260"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+BT                =  1
+DeviceFile    =  MotorolaA830_1.htm
+PairingFile   =  MotorolaA830_2.htm
+
+[Motorola - V265]
+Driver=265XUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=V265"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+BT                =  1
+DeviceFile    =  MotorolaA830_1.htm
+PairingFile   =  MotorolaA830_2.htm
+
+[Motorola - V260m]
+Driver=260mXUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=V260m"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+BT                =  1
+DeviceFile    =  MotorolaA830_1.htm
+PairingFile   =  MotorolaA830_2.htm
+
+[Motorola - V265m]
+Driver=265mXUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=V265m"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+BT                =  1
+DeviceFile    =  MotorolaA830_1.htm
+PairingFile   =  MotorolaA830_2.htm
+
+[Motorola - A840]
+Driver=840XUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=A840"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - A840m]
+Driver=840mXUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=A840m"
+Mode=+MCMA: CDMA
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - A860]
+Driver=860XUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=A860"
+Mode=+MCMA: CDMA
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - T720c]
+Driver=720cXUC
+;Driver=720XUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=t720c"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - T730c]
+Driver=730cXUC
+;Driver=720XUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=t730p"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - V710]
+Driver=710XUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=V710"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+BT                =  1
+DeviceFile    =  MotorolaA830_1.htm
+PairingFile   =  MotorolaA830_2.htm
+
+[Motorola - V710m]
+Driver=710mXUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=V710m"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+BT                =  1
+DeviceFile    =  MotorolaA830_1.htm
+PairingFile   =  MotorolaA830_2.htm
+
+[Motorola - C332c]
+Driver=332XUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=332c"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - C333c]
+Driver=333XUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=333c"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - C341c]
+Driver=341cXUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=341c"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - C343c]
+Driver=343XUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=343c"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - C343cr]
+Driver=343CRXUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=343cr"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - T300p]
+Driver=T300XUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=T300p"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - V810]
+Driver=810XUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=V810"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - V510]
+Driver=510XUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=V510"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - E310]
+Driver=310XUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=E310"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - V60c]
+Driver=V60CUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=60c"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - V60x]
+Driver=V60XUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=60x"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - V60P]
+Driver=V60pXUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=60p"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - V65P]
+Driver=V65pXUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=65p"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - V60v]
+Driver=V60vXUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model=Motorola CDMA V60v Phone
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola 1xEV-DO Handset
+
+[Motorola - V120e]
+Driver=120eXUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=120e"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - V120x]
+Driver=120XUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=120x"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+;########################## Motorola TDMA
+{ Motorola TDMA}
+
+[Motorola - Generic TDMA driver]
+Driver=TDMA_GEN
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model=+CGMM:  Generic
+Hardware=
+PnPNames=Motorola USB Modem xx
+
+[Motorola - V120t]
+Driver=120TUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=120t"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM01193027
+PnPNames=Motorola USB Modem
+
+[Motorola - 331t]
+Driver=331TUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=C331"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - 332t]
+Driver=332TUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=C332t"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+;PnPNames=Motorola USB Modem
+
+[Motorola - 350t]
+Driver=350TUC
+;Driver=353TUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=C350t"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - 353t]
+Driver=353TUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=C353t"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+PnPNames=Motorola USB Modem
+
+[Motorola - V60iT]
+Driver=V60TUC
+Manufacturer=+CGMI: "Motorola CE, Copyright
+Model="MODEL=60t"
+Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM01193027
+PnPNames=Motorola USB Modem
+
+
+;-----------------------------------
+;-----------------------------------
+;-----------------------------------
+;-----------------------------------
+;----------------------------------- Stand by list
+;-----------------------------------
+;-----------------------------------
+;-----------------------------------
+;-----------------------------------
+
+
+;[Motorola - E365]
+;Driver=E365
+;Manufacturer=+CGMI: "Motorola CE, Copyright
+;Model=+CGMM: "GSM900","GSM1800","GSM1900","MODEL=E365"
+;Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+;PnPNames=Motorola USB Modem,Motorola * Family IR Modem,Standard Modem over IR link
+
+;[Motorola - V295]
+;Driver=V295
+;Manufacturer=BenQ
+;Model=V295
+;Hardware=%windir%\Inf\V295.inf, Motorola, UNIMODEM2303
+;PnPNames=Motorola V295 Phone
+
+;[Motorola - A830]
+;Driver=830UWBCI
+;Manufacturer=+CGMI: "Motorola CE, Copyright
+;Model=+CGMM: "GSM900","GSM1800","GSM1900","WCDMA","MODEL=A830"
+;Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+;PnPNames=Motorola USB Modem,Motorola * Family IR Modem,Standard Modem over IR link
+
+;[Motorola - V120t]
+;Driver=120TUC
+;Manufacturer=+CGMI: "Motorola CE, Copyright
+;Model=+CGMM: "TDMA800","TDMA1900","AMPS800","MODEL=120t"
+;Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM01193027
+;PnPNames=Motorola USB Modem
+
+;[Motorola - V120c]
+;Driver=120CUC
+;Manufacturer=+CGMI: "Motorola CE, Copyright
+;Model=+CGMM: "CDMA800","CDMA1900","AMPS800","MODEL=120c"
+;Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEMDEBC3E9F
+;PnPNames=Motorola USB Modem
+
+;[Motorola - Timeport 270 (BT)]
+;Driver=270CUBCI
+;ATI4=Series
+;CapaNetwork=GSM
+;PnPNames=3Com Bluetooth DUN Client
+
+;[Motorola - T280]
+;Driver=280GWBI
+;Manufacturer=+CGMI: "Motorola CE, Copyright
+;Model=+CGMM: "GSM900","GSM1800","GSM1900","MODEL=280"
+;Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+;PnPNames=Motorola USB Modem,Motorola * Family IR Modem,Standard Modem over IR link
+
+;[Motorola - T280i]
+;Driver=280GWBI
+;Manufacturer=+CGMI: "Motorola CE, Copyright
+;Model=+CGMM: "GSM900","GSM1800","GSM1900","MODEL=280i"
+;Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+;PnPNames=Motorola USB Modem,Motorola * Family IR Modem,Standard Modem over IR link
+
+;[Motorola - T280i (USB)]
+;Driver=280GWC
+;Manufacturer=+CGMI: "Motorola CE, Copyright
+;Model=+CGMM: "GSM900","GSM1800","GSM1900","MODEL=280i"
+;PnPNames=Motorola USB Modem
+
+;[Motorola - V70]
+;Driver=V70GEC
+;Manufacturer=+CGMI: "Motorola CE, Copyright
+;Model=+CGMM: "GSM900","GSM1800","MODEL=V70"
+;Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+;PnPNames=Motorola USB Modem
+
+;[Motorola - V70]
+;Driver=V70GEC
+;Manufacturer=+CGMI: "Motorola CE, Copyright
+;Model=+CGMM: "GSM1900","MODEL=V70"
+;Hardware=%windir%\Inf\Motomdm.inf, Motorola, UNIMODEM99EF5971
+;PnPNames=Motorola USB Modem
+
+;[Motorola - T270]
+;Driver=270CUBCI
+;Manufacturer=+CGMI: "Motorola CE, Copyright
+;Model=+CGMM: "CDMA800","CDMA1900","AMPS800","MODEL=270c"
+;PnPNames=Motorola USB Modem

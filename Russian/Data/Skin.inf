@@ -1,0 +1,283 @@
+[General]
+Product=mobile PhoneTools
+Version=2.0
+Image=skin.png
+Frame Image=0,0,166,378
+
+[Yes Button]
+Window=24,214,64,44
+Image=184,94
+Image Pushed=334,94
+
+[Menu Button]
+Window=53,212,69,29
+Image=213,62
+Image Pushed=363,62
+
+[No Button]
+Window=87,214,65,45
+Image=247,94
+Image Pushed=397,94
+
+[1 Button]
+Window=28,262,35,22
+Image=188,142
+Image Pushed=338,142
+
+[2 Button]
+Window=70,267,35,18
+Image=230,147
+Image Pushed=380,147
+
+[3 Button]
+Window=112,262,35,22
+Image=272,142
+Image Pushed=422,142
+
+[4 Button]
+Window=30,284,35,22
+Image=190,164
+Image Pushed=340,164
+
+[5 Button]
+Window=70,289,35,18
+Image=230,169
+Image Pushed=380,169
+
+[6 Button]
+Window=110,284,35,22
+Image=270,164
+Image Pushed=420,164
+
+[7 Button]
+Window=32,306,35,22
+Image=192,186
+Image Pushed=342,186
+
+[8 Button]
+Window=70,311,35,18
+Image=230,191
+Image Pushed=380,191
+
+[9 Button]
+Window=108,306,35,22
+Image=268,186
+Image Pushed=418,186
+
+[* Button]
+Window=40,330,26,20
+Image=200,210
+Image Pushed=350,210
+
+[0 Button]
+Window=70,333,35,18
+Image=230,213
+Image Pushed=380,213
+
+[# Button]
+Window=109,330,26,20
+Image=269,210
+Image Pushed=419,210
+
+[Close Button]
+Window=131,22,17,18
+Image=291,22
+Image Pushed=441,22
+
+[Functions Panel Button]
+Window=104,191,20,21
+Image=264,31
+Image Pushed=414,31
+
+[Minimize Button]
+Window=132,40,15,16
+Image=292,40
+Image Pushed=442,40
+
+[Help Button]
+Window=51,191,20,21
+Image=211,31
+Image Pushed=361,31
+
+[Select Contact Button]
+Window=76,187,23,24
+Image=236,27
+Image Pushed=386,27
+
+[Info Button]
+Rank=8
+Window=670,280,28,28
+Image=622,280
+Image Pushed=622,280
+Image Disabled=574,280
+Image Hover=670,280
+Show On Slider=1
+
+[GPRS Button]
+Rank=1
+Window=670,56,28,28
+Image=622,56
+Image Pushed=622,56
+Image Disabled=574,56
+Image Hover=670,56
+Show On Slider=1
+
+[SMS Button]
+Rank=2
+Window=670,88,28,28
+Image=622,88
+Image Pushed=622,88
+Image Disabled=574,88
+Image Hover=670,88
+Show On Slider=1
+
+[MM Studio Button]
+Rank=4
+Window=670,120,28,28
+Image=622,152
+Image Pushed=622,152
+Image Disabled=574,152
+Image Hover=670,152
+Show On Slider=1
+
+[Mail Button]
+Rank=3
+Window=670,120,28,28
+Image=622,120
+Image Pushed=622,120
+Image Disabled=574,120
+Image Hover=670,120
+Show On Slider=1
+
+[Phonebk Button]
+Rank=5
+Window=670,184,28,28
+Image=622,184
+Image Pushed=622,184
+Image Disabled=574,184
+Image Hover=670,184
+Show On Slider=1
+
+[Sync Button]
+Rank=7
+Window=670,248,28,28
+Image=622,248
+Image Pushed=622,248
+Image Disabled=574,248
+Image Hover=670,248
+Show On Slider=1
+
+[Calendar Button]
+Rank=6
+Window=670,216,28,28
+Image=622,216
+Image Pushed=622,216
+Image Disabled=574,216
+Image Hover=670,216
+Show On Slider=1
+
+[Mute Check]
+Window=45,109,20,20
+Image=573,354
+Image Pushed=573,329
+
+[Signal Level Image]
+Window=40,70,17,13
+Image 0=228,247
+Image 1=228,262
+Image 2=228,277
+Image 3=228,292
+Image 4=228,307
+Image 5=228,322
+
+[Battery Level Image]
+Window=117,70,18,11
+Image 0=188,249
+Image 1=188,264
+Image 2=188,279
+Image 3=188,294
+Image 4=188,309
+
+[Received Message Image]
+Window=93,67,20,16
+Image 0=249,373
+Image 1=226,365
+Image 2=226,345
+
+[GPRS Image]
+Window=72,66,19,19
+Image 0=188,343
+Image 1=188,364
+
+[Volume Image]
+Window=69,108,11,22
+Image 0=595,353
+
+[Status Image]
+Window=31,13,9,20
+Image 0=571,13
+Image 1=591,13
+Image 2=611,13
+
+[Fax Animation]
+Window=66,104,40,40
+Image 0=269,343
+Image 1=319,343
+Image 2=369,343
+Image 3=419,343
+Timer=100
+
+[SMS Animation]
+Window=66,114,40,40
+Image 0=269,243
+Image 1=319,243
+Image 2=369,243
+Image 3=419,243
+Timer=100
+
+[Mail Animation]
+Window=66,104,40,40
+Image 0=269,293
+Image 1=319,293
+Image 2=369,293
+Image 3=419,293
+Timer=100
+
+[Roaming Image]
+Window=61,73,9,9
+Image 0=193,325
+
+[Operator Text]
+Window=42,151,90,13
+Format=CENTER, SINGLELINE
+Font Name=Arial
+Color=1F4799
+Font Size=11
+Bold=1
+AntiAlias=1
+
+[Time Text]
+Window=82,107,28,10
+Format=RIGHT, SINGLELINE
+Font Name=Arial
+Color=1F4799
+Font Size=10
+
+[Functions Panel]
+Image=480,31,67,318
+Closed Position=93,31
+Open Position=160,31
+
+[Volume Bar]
+Window=81,119,48,10
+Channel Image=606,364
+Slider Image=645,356,10,7
+
+[Function Button]
+First Window=501,50,28,28
+Vertical Offset=2
+Separator Height=4
+
+[Dialing Window]
+Window=40,135,95,16
+Color=1F4799
