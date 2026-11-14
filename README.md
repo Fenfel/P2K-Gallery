@@ -44,4 +44,4 @@ APK → `android/app/build/outputs/apk/debug/app-debug.apk`. Prebuilt debug APKs
 
 P2K directory records carry **no timestamps**, so "newest first" orders by numeric filename numbering (what the phone camera produces). Package id `ru.mptdroid` is kept so old installs update in place.
 
-License: not specified yet.
+License: none — all rights reserved.
