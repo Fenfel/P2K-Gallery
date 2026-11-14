@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="tp_primary">#0E7A6E</color>
+    <color name="tp_on_primary">#FFFFFF</color>
+    <color name="tp_primary_container">#BFF2EA</color>
+    <color name="tp_secondary_container">#F3E8D4</color>
+    <color name="tp_amber">#C97A00</color>
+    <color name="white">#FFFFFF</color>
+</resources>
