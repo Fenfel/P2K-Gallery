@@ -40,12 +40,6 @@ cd android && gradle assembleDebug
 
 APK → `android/app/build/outputs/apk/debug/app-debug.apk`. Prebuilt debug APKs are attached to GitHub Releases.
 
-## Repo layout
-
-The repo contains **only the Android app** (`android/`). The original Windows-era
-MPTDroid toolset, skins and guides (`Addons/`, `Russian/`, `IDEA.md`) stay local —
-this is a Kotlin project, not an archive of the 2004 flasher scene.
-
 ## Notes
 
 P2K directory records carry **no timestamps**, so "newest first" orders by numeric filename numbering (what the phone camera produces). Package id `ru.mptdroid` is kept so old installs update in place.
